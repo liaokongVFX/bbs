@@ -4,13 +4,12 @@
 
 from datetime import datetime
 
-from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from exts import db
 
 
-class CMSUser(db.Model, UserMixin):
+class CMSUser(db.Model):
     __tablename__ = "cms_user"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(50), nullable=False)
